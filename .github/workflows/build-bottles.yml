@@ -92,9 +92,8 @@ jobs:
           output="$(
             "$bash_path" -c '
               source "$1/libexec/lib/bash/std/lib_std.sh"
-              import "$1/libexec/lib/bash/file/lib_file.sh"
-              import "$1/libexec/lib/bash/gh/lib_gh.sh"
-              printf "%s\n" "$(type -t std_run)" "$(type -t update_file_section)" "$(type -t gh_run)"
+              base_std_import file/lib_file.sh gh/lib_gh.sh
+              printf "%s\n" "$(type -t base_std_run)" "$(type -t base_file_update_file_section)" "$(type -t base_gh_run)"
             ' _ "$libs_prefix"
           )"
           [[ "$output" == $'function\nfunction\nfunction' ]]
