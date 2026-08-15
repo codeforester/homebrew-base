@@ -6,6 +6,12 @@ class BaseBashLibs < Formula
   license "Apache-2.0"
   head "https://github.com/basefoundry/base-bash-libs.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/basefoundry/homebrew-base/releases/download/base-v1.8.0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15da42f88a2b9887256ec3832102f6f578d1eba80b843a70b1f3e6181e240dc5"
+    sha256 cellar: :any_skip_relocation, sequoia:       "615be38461944ec1d43f3d5814a9cf77ccb4b9b0eec8ba36f2e4b853eb6a3b47"
+  end
+
   depends_on "bash"
 
   def install
